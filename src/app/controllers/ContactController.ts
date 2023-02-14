@@ -1,8 +1,8 @@
 import { FastifyRequest, FastifyReply } from "fastify";
-
+import { ContactRepository } from "../repositories/ContactRepository";
 class ContactControllerModule {
   async index(_request: FastifyRequest, _reply: FastifyReply) {
-    return { hello: "world" };
+    return await ContactRepository.findAll();
   }
 
   show() {}
